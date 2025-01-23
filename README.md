@@ -27,7 +27,12 @@ lib/
 │   └── quiz_model.dart
 ├── provider/
 │   └── quiz_provider.dart
+├── services/
+│   └── quiz_service.dart
 └── screens/
+    ├── components/
+        ├── answer_button.dart
+        └──  question_card.dart
     ├── home_screen.dart
     ├── quiz_screen.dart
     └── result_screen.dart

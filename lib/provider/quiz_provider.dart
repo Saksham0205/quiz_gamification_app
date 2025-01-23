@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../model/quiz_model.dart';
-import '../service/quiz_service.dart';
+import '../services/quiz_service.dart';
 
 
 class QuizProvider with ChangeNotifier {
