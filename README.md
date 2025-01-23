@@ -1,16 +1,56 @@
-# quiz_gamification_app
+# Quiz Gamification App
 
-A new Flutter project.
+## Overview
+A modern, responsive Flutter application that provides an interactive quiz experience with gamification elements.
+
+## Features
+- Responsive design across mobile, tablet, and desktop layouts
+- Dynamic quiz generation
+- Real-time scoring system
+- Animated result screen
+- State management using Provider
+
+## Screenshots
+[Add screenshots of your app here]
+
+## Technical Details
+- **State Management**: Provider
+- **Animations**: Lottie
+- **Responsive Design**: Custom responsive layout
+- **UI Components**: Material Design
+
+## Project Structure
+```
+lib/
+├── main.dart
+├── model/
+│   └── quiz_model.dart
+├── provider/
+│   └── quiz_provider.dart
+└── screens/
+    ├── home_screen.dart
+    ├── quiz_screen.dart
+    └── result_screen.dart
+```
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
+- Flutter SDK
+- Dart SDK
 
-A few resources to get you started if this is your first Flutter project:
+### Installation
+1. Clone the repository
+2. Run `flutter pub get`
+3. Run `flutter run`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Dependencies
+- provider
+- lottie
+- flutter
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributing
+Contributions are welcome. Please submit a pull request.
+
+## License
+[Specify your license]
