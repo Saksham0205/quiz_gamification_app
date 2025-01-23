@@ -5,7 +5,7 @@ import '../model/quiz_model.dart';
 
 
 class QuizService {
-  static const String apiUrl = 'https://api.jsonserve.com/Uw5CrX'; // Replace with actual endpoint
+  static const String apiUrl = 'https://api.jsonserve.com/Uw5CrX'; 
 
   Future<QuizDetails> fetchQuizDetails() async {
     try {

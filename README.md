@@ -52,5 +52,3 @@ lib/
 ## Contributing
 Contributions are welcome. Please submit a pull request.
 
-## License
-[Specify your license]
