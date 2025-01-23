@@ -40,8 +40,6 @@ class QuizProvider with ChangeNotifier {
   void answerQuestion(QuizOption selectedOption) {
     if (_quizDetails == null || _currentQuestionIndex >= _quizDetails!.questions.length) return;
 
-    final currentQuestion = _quizDetails!.questions[_currentQuestionIndex];
-
     if (selectedOption.isCorrect) {
       _totalPoints += 4;
       _correctAnswers++;

@@ -1,10 +1,105 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:quiz_gamification_app/provider/quiz_provider.dart';
 import 'package:quiz_gamification_app/screens/result_screen.dart';
-import '../provider/quiz_provider.dart';
-import '../responsive_screens.dart';
+import '../model/quiz_model.dart';
+
+class QuestionCard extends StatelessWidget {
+  final QuizQuestion question;
+
+  const QuestionCard({super.key, required this.question});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(16),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade200,
+            blurRadius: 10,
+            offset: Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            question.description,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.black87,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 20),
+          _buildOptions(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildOptions(BuildContext context) {
+    return Column(
+      children: question.options.map((option) =>
+          Container(
+            width: double.infinity,
+            height: 70,
+            margin: EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blue.shade500, Colors.blue.shade700],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue.shade200,
+                  blurRadius: 5,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              onPressed: () {
+                Provider.of<QuizProvider>(context, listen: false)
+                    .answerQuestion(option);
+              },
+              child: Text(
+                option.description,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          )
+      ).toList(),
+    );
+  }
+}
 
 class QuizScreen extends StatelessWidget {
+  const QuizScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +193,7 @@ class QuizScreen extends StatelessWidget {
 
             final currentQuestion = quizProvider.quizDetails!.questions[quizProvider.currentQuestionIndex];
 
-            return AdaptiveQuestionCard(question: currentQuestion);
+            return QuestionCard(question: currentQuestion);
           },
         ),
       ),

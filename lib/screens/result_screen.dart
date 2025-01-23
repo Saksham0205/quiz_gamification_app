@@ -5,6 +5,8 @@ import 'package:lottie/lottie.dart';
 import '../provider/quiz_provider.dart';
 
 class ResultScreen extends StatefulWidget {
+  const ResultScreen({super.key});
+
   @override
   _ResultScreenState createState() => _ResultScreenState();
 }

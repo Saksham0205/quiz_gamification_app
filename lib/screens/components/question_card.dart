@@ -8,7 +8,7 @@ import 'answer_button.dart';
 class QuestionCard extends StatelessWidget {
   final QuizQuestion question;
 
-  const QuestionCard({Key? key, required this.question}) : super(key: key);
+  const QuestionCard({super.key, required this.question});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class QuestionCard extends StatelessWidget {
               Provider.of<QuizProvider>(context, listen: false)
                   .answerQuestion(option);
             },
-          )).toList(),
+          )),
         ],
       ),
     );

@@ -4,6 +4,8 @@ import 'package:quiz_gamification_app/screens/quiz_screen.dart';
 import '../provider/quiz_provider.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
