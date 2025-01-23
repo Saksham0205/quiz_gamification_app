@@ -14,6 +14,8 @@ void main() {
 }
 
 class QuizApp extends StatelessWidget {
+  const QuizApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
