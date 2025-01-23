@@ -60,6 +60,5 @@ lib/
 - provider
 - lottie
 - flutter
+- http
 
-## Contributing
-Contributions are welcome. Please submit a pull request.
