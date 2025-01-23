@@ -11,7 +11,9 @@ A modern, responsive Flutter application that provides an interactive quiz exper
 - State management using Provider
 
 ## Screenshots
-[Add screenshots of your app here]
+### Quiz Screen Example:
+![Quiz Screen 1](Quiz_Screen-1.jpg)
+![Quiz Screen 2](Quiz_Screen-2.jpg)
 
 ## Technical Details
 - **State Management**: Provider
@@ -56,4 +58,3 @@ lib/
 
 ## Contributing
 Contributions are welcome. Please submit a pull request.
-
